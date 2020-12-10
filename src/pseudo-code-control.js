@@ -126,15 +126,51 @@ hint: use that Cover class!
 Pseudo Code:
 1) create variable for the button referencing the html element
 2) create an event listeners for the click action calling the event handler
-2) create event handle/function to trigger cover change (with cover, title, descriiptor embedded)
 
 B) Every time the user clicks the Show New Random Cover button, the random cover is displayed
 hint: you may need to create a function that displays information on the DOM
+3) create event handle/function to trigger cover change (with cover, title, descriiptor embedded)
 
 Pseudo Code:
 1) ABC
 2) ABC
 
+Date/Time: Thursday, 12/10 from 2:30p-4:00p
 
+Iteration 2 - Switching Views: Goals
+
+NOTE: in this iteration, you are not worrying about making the form WORK, and you are not
+worrying about saving or displaying covers. You simply want to make sure the views can be s
+witched when you click the appropriate buttons.
+
+Form View:
+When a user clicks the “Make Your Own Cover” button, we should see the form, and the homepage view should be hidden
+1) docoument querySelector
+2) listeners
+
+When the Form view is visible, the “Show New Random Cover” and “Save Cover” buttons should be hidden
+When the Form view is visible, the “Home” button should be visible
+
+Pseudo Code:
+1) Look for form - found the html code for make your over cover form in line 29 to 40 of the html
+2) how do we hide the view home-view line 17 and display line 29 view form-view hidden
+3a) "hidden is a key word of some type so we simple innerText to replace on page load
+4)  var for the button make own cover
+4a) var for for button change home cover html
+5) document query querySelector
+6) event handler
+7) innert text in the event handler
+
+Saved Covers View:
+When a user clicks the “View Saved Covers” button, we should see the saved covers section, and the homepage view should be hidden
+When the Saved Covers view is visible, the “Show New Random Cover” and “Save Cover” buttons should be hidden
+When the Saved Covers view is visible, the “Home” button should be visible
+For both the Make New Cover form section and the Saved Covers section:
+
+In summary: Be able to switch between the three views (main poster, form, and saved posters) on the correct button clicks
+When a user clicks the “Home” button, we should only see the Home section
+When a user clicks the “Home” button, the home button should be hidden
+When a user clicks the “Home” button, the “Show New Random Cover” and “Save Cover” buttons should be visible again
+Hint: go check out the HTML and CSS files to see how the form and saved covers sections are being hidden in the first place
 
 */
