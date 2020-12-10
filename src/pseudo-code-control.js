@@ -46,20 +46,27 @@ Iteration 0
 
 4) When page loads we should see random load of cover, title, descriptors
 - TBD
-- Need to understand the connection b/ main.js and cover.js
-- Need to understand the connection b/ main.js and index.html
-- Need to understand the connection b/ main.js and index.html
+- Need to understand the connection b/ main.js and cover.js - done
+- Need to understand the connection b/ main.js and index.html - done
+- Need to understand the connection b/ main.js and index.html - done
+- Files linked via html last three lines and need to use browser console to access integration
+- Sample of variable pulling the HTML element
+var coverImage = document.querySelector(".cover-image"); - need to revisit
+var tagline1 = document.querySelector(".tagline-1"); //row21
+var tagline2 = document.querySelector(".tagline-2"); // row21
+var coverTitle = document.querySelector(".cover-title"); - need to revisit
+  - Do homework to help with understanding
 
 
 Date/Time: Wednesday, 12/9 from 6p-8p
-1) git commit/push/pull
-2) create PR template from this slack in the frontend 2011 help channel
+1) git commit/push/pull - done
+2) create PR template from this slack in the frontend 2011 help channel - done
 https://turingschool.slack.com/archives/C01GYDQT316/p1607530613013700?thread_ts=1607478903.006800&cid=C01GYDQT316
-2) retro
+2) retro - done
 2a) Did we complete Iteration 0
-2b) let Matt drive 60 min  git commit/push/pull; Steve
-3) pseudo control and code quality file
-4) review code from yesterday (what is getRandomIndex(covers) actually pulling?)
+2b) let Matt drive 60 min  git commit/push/pull; Steve - done
+3) pseudo control and code quality file - done
+4) review code from yesterday (what is getRandomIndex(covers) actually pulling?) - done
 5) Next Step - Did we complete iteration 0; how to complete
 6) Next Step - Get into iteration 0
 7) READme file
