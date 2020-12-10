@@ -56,6 +56,47 @@ var tagline1 = document.querySelector(".tagline-1"); //row21
 var tagline2 = document.querySelector(".tagline-2"); // row21
 var coverTitle = document.querySelector(".cover-title"); - need to revisit
   - Do homework to help with understanding
+- First iteration
+  - function getRandomIndex(array) {
+     return Math.floor(Math.random() * array.length);
+   }
+
+  var mainCover = document.querySelector('.main-cover')
+
+  mainCover.innerHTML = `
+    <img class="cover-image" src=${covers[getRandomIndex(covers)]}>
+    <h2 class="cover-title">${titles[getRandomIndex(titles)]}</h2>
+    <h3 class="tagline">A tale of <span class="tagline-1">${descriptors[getRandomIndex(descriptors)]}</span> and <span class="tagline-2">${descriptors[getRandomIndex(descriptors)]}</span></h3>
+    <img class="price-tag" src="./assets/price.png">
+    <img class="overlay" src="./assets/overlay.png">
+    `;
+
+- Second Iteration
+  - var coverImage1 = document.querySelector("img");  //row19
+  var tagline1 = document.querySelector(".tagline-1"); //row21
+  var tagline2 = document.querySelector(".tagline-2"); // row21
+  var coverTitle = document.querySelector(".cover-title"); // row 20
+
+- Final Iteration
+ - var coverImage1 = document.querySelector("img");  //row19
+ var tagline1 = document.querySelector(".tagline-1"); //row21
+ var tagline2 = document.querySelector(".tagline-2"); // row21
+ var coverTitle = document.querySelector(".cover-title"); // row 20
+
+ function getRandomIndex(array) {
+   return Math.floor(Math.random() * array.length);
+ }
+
+ coverImage1.src = `${covers[getRandomIndex(covers)]}`;
+ tagline1.innerText = descriptors[getRandomIndex(descriptors)];
+ tagline2.innerText = descriptors[getRandomIndex(descriptors)];
+ coverTitle.innerText = titles[getRandomIndex(titles)];
+
+  coverImage1.src = `${covers[1]}`
+  tagline1.innerText = descriptors[1];
+  tagline2.innerText = descriptors[2];
+  coverTitle.innerText = titles[0]
+
 
 
 Date/Time: Wednesday, 12/9 from 6p-8p
@@ -71,6 +112,7 @@ https://turingschool.slack.com/archives/C01GYDQT316/p1607530613013700?thread_ts=
 6) Next Step - Get into iteration 0
 7) READme file
 8) Other
+9) How to declare var as global in this progam
 
 Iteration 0
 - See Step 4 above
@@ -82,8 +124,8 @@ hint: you may need to update the value of the provided currentCover variable
 hint: use that Cover class!
 
 Pseudo Code:
-1) ABC
-2) ABC
+1) create an event listeners for the click action
+2) create event handle/function trigger cover change (cover change inside the function)
 
 B) Every time the user clicks the Show New Random Cover button, the random cover is displayed
 hint: you may need to create a function that displays information on the DOM

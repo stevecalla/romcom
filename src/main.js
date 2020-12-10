@@ -1,12 +1,18 @@
-// Create variables targetting the relevant DOM elements here 👇
-var coverImage1 = document.querySelector(".cover-image");  //row19
+//Create variables targetting the relevant DOM elements here 👇
+
+var coverImage1 = document.querySelector("img");  //row19
 var tagline1 = document.querySelector(".tagline-1"); //row21
 var tagline2 = document.querySelector(".tagline-2"); // row21
-// var coverTitle = document.querySelector(".cover-title"); // row 20
+var coverTitle = document.querySelector(".cover-title"); // row 20
 
-//coverImage.innerText = covers[1];
-tagline1.innerText = descriptors[1];
-tagline2.innerText = descriptors[2];
+function getRandomIndex(array) {
+  return Math.floor(Math.random() * array.length);
+}
+
+coverImage1.src = `${covers[getRandomIndex(covers)]}`;
+tagline1.innerText = descriptors[getRandomIndex(descriptors)];
+tagline2.innerText = descriptors[getRandomIndex(descriptors)];
+coverTitle.innerText = titles[getRandomIndex(titles)];
 
 // We've provided a few variables below
 // var savedCovers = [
@@ -129,15 +135,9 @@ tagline2.innerText = descriptors[2];
 //   }
 // }
 //
-// function getRandomIndex(array) {
-//   return Math.floor(Math.random() * array.length);
-// }
-//
-// var randNum = (Math.random() * covers.length);
-// console.log(covers.length);
-// console.log(randNum);
-// console.log(Math.floor(randNum));
-//
+
+
+
 // var mainCover = new Cover(covers[getRandomIndex(covers)], titles[getRandomIndex(titles)], descriptors[getRandomIndex(descriptors)], descriptors[getRandomIndex(descriptors)]);
 // console.log(mainCover);
 
