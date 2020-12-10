@@ -46,24 +46,73 @@ Iteration 0
 
 4) When page loads we should see random load of cover, title, descriptors
 - TBD
-- Need to understand the connection b/ main.js and cover.js
-- Need to understand the connection b/ main.js and index.html
-- Need to understand the connection b/ main.js and index.html
+- Need to understand the connection b/ main.js and cover.js - done
+- Need to understand the connection b/ main.js and index.html - done
+- Need to understand the connection b/ main.js and index.html - done
+- Files linked via html last three lines and need to use browser console to access integration
+- Sample of variable pulling the HTML element
+var coverImage = document.querySelector(".cover-image"); - need to revisit
+var tagline1 = document.querySelector(".tagline-1"); //row21
+var tagline2 = document.querySelector(".tagline-2"); // row21
+var coverTitle = document.querySelector(".cover-title"); - need to revisit
+  - Do homework to help with understanding
+- First iteration
+  - function getRandomIndex(array) {
+     return Math.floor(Math.random() * array.length);
+   }
+
+  var mainCover = document.querySelector('.main-cover')
+
+  mainCover.innerHTML = `
+    <img class="cover-image" src=${covers[getRandomIndex(covers)]}>
+    <h2 class="cover-title">${titles[getRandomIndex(titles)]}</h2>
+    <h3 class="tagline">A tale of <span class="tagline-1">${descriptors[getRandomIndex(descriptors)]}</span> and <span class="tagline-2">${descriptors[getRandomIndex(descriptors)]}</span></h3>
+    <img class="price-tag" src="./assets/price.png">
+    <img class="overlay" src="./assets/overlay.png">
+    `;
+
+- Second Iteration
+  - var coverImage1 = document.querySelector("img");  //row19
+  var tagline1 = document.querySelector(".tagline-1"); //row21
+  var tagline2 = document.querySelector(".tagline-2"); // row21
+  var coverTitle = document.querySelector(".cover-title"); // row 20
+
+- Final Iteration
+ - var coverImage1 = document.querySelector("img");  //row19
+ var tagline1 = document.querySelector(".tagline-1"); //row21
+ var tagline2 = document.querySelector(".tagline-2"); // row21
+ var coverTitle = document.querySelector(".cover-title"); // row 20
+
+ function getRandomIndex(array) {
+   return Math.floor(Math.random() * array.length);
+ }
+
+ coverImage1.src = `${covers[getRandomIndex(covers)]}`;
+ tagline1.innerText = descriptors[getRandomIndex(descriptors)];
+ tagline2.innerText = descriptors[getRandomIndex(descriptors)];
+ coverTitle.innerText = titles[getRandomIndex(titles)];
+
+  coverImage1.src = `${covers[1]}`
+  tagline1.innerText = descriptors[1];
+  tagline2.innerText = descriptors[2];
+  coverTitle.innerText = titles[0]
+
 
 
 Date/Time: Wednesday, 12/9 from 6p-8p
-1) git commit/push/pull
-2) create PR template from this slack in the frontend 2011 help channel
+1) git commit/push/pull - done
+2) create PR template from this slack in the frontend 2011 help channel - done
 https://turingschool.slack.com/archives/C01GYDQT316/p1607530613013700?thread_ts=1607478903.006800&cid=C01GYDQT316
-2) retro
+2) retro - done
 2a) Did we complete Iteration 0
-2b) let Matt drive 60 min  git commit/push/pull; Steve
-3) pseudo control and code quality file
-4) review code from yesterday (what is getRandomIndex(covers) actually pulling?)
+2b) let Matt drive 60 min  git commit/push/pull; Steve - done
+3) pseudo control and code quality file - done
+4) review code from yesterday (what is getRandomIndex(covers) actually pulling?) - done
 5) Next Step - Did we complete iteration 0; how to complete
 6) Next Step - Get into iteration 0
 7) READme file
 8) Other
+9) How to declare var as global in this progam
 
 Iteration 0
 - See Step 4 above
@@ -75,8 +124,8 @@ hint: you may need to update the value of the provided currentCover variable
 hint: use that Cover class!
 
 Pseudo Code:
-1) ABC
-2) ABC
+1) create an event listeners for the click action
+2) create event handle/function trigger cover change (cover change inside the function)
 
 B) Every time the user clicks the Show New Random Cover button, the random cover is displayed
 hint: you may need to create a function that displays information on the DOM
