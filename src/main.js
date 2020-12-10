@@ -4,15 +4,21 @@ var coverImage1 = document.querySelector("img");  //row19
 var tagline1 = document.querySelector(".tagline-1"); //row21
 var tagline2 = document.querySelector(".tagline-2"); // row21
 var coverTitle = document.querySelector(".cover-title"); // row 20
+var randomButtonCover = document.querySelector('.random-cover-button'); //row 12
 
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
 
-coverImage1.src = `${covers[getRandomIndex(covers)]}`;
-tagline1.innerText = descriptors[getRandomIndex(descriptors)];
-tagline2.innerText = descriptors[getRandomIndex(descriptors)];
-coverTitle.innerText = titles[getRandomIndex(titles)];
+randomButtonCover.addEventListener('click', randomCover);
+
+function randomCover() {
+  coverImage1.src = `${covers[getRandomIndex(covers)]}`;
+  tagline1.innerText = descriptors[getRandomIndex(descriptors)];
+  tagline2.innerText = descriptors[getRandomIndex(descriptors)];
+  coverTitle.innerText = titles[getRandomIndex(titles)];
+}
+
 
 // We've provided a few variables below
 // var savedCovers = [

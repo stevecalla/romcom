@@ -124,8 +124,9 @@ hint: you may need to update the value of the provided currentCover variable
 hint: use that Cover class!
 
 Pseudo Code:
-1) create an event listeners for the click action
-2) create event handle/function trigger cover change (cover change inside the function)
+1) create variable for the button referencing the html element
+2) create an event listeners for the click action calling the event handler
+2) create event handle/function to trigger cover change (with cover, title, descriiptor embedded)
 
 B) Every time the user clicks the Show New Random Cover button, the random cover is displayed
 hint: you may need to create a function that displays information on the DOM
