@@ -21,14 +21,18 @@ function randomCover() {
 
 var homeView = document.querySelector(".view.home-view");
 var makeCoverView = document.querySelector(".view.form-view.hidden");
+var saveCoverView = document.querySelector(".view.saved-view.hidden");
+
 var makeCoverButton = document.querySelector(".make-new-button");
 var randomCoverButton = document.querySelector(".random-cover-button");
 var saveCoverButton = document.querySelector(".save-cover-button")
+var savedViewCoverButton = document.querySelector(".view-saved-button")
 var homeCoverButton = document.querySelector(".home-button.hidden")
 
-makeCoverButton.addEventListener("click", viewSwitch);
 
-function viewSwitch() {
+makeCoverButton.addEventListener("click", viewSwitchMakeCover);
+
+function viewSwitchMakeCover() {
   // homeView.classList.remove('.view.home-view');
   homeView.classList.add('hidden');
   makeCoverView.classList.remove('hidden');//reminder
@@ -36,6 +40,17 @@ function viewSwitch() {
   saveCoverButton.classList.add('hidden');
   homeCoverButton.classList.remove('hidden');
 };
+
+savedViewCoverButton.addEventListener("click", viewSwitchSaveCover);
+
+function viewSwitchSaveCover() {
+  homeView.classList.add('hidden');
+  saveCoverView.classList.remove('hidden');
+  randomCoverButton.classList.add('hidden');
+  saveCoverButton.classList.add('hidden');
+  homeCoverButton.classList.remove('hidden');
+};
+
 
 
 // We've provided a few variables below
@@ -53,121 +68,3 @@ function viewSwitch() {
 // function getRandomIndex(array) {
 //   return Math.floor(Math.random() * array.length);
 // }
-
-
-//----------- CODE PREP----------------------
-// var covers = [
-//   './assets/bluebrocade.jpg',
-//   './assets/dance.jpg',
-//   './assets/embrace.jpg',
-//   './assets/fire.png',
-//   './assets/frock.png',
-//   './assets/glorious.jpg',
-//   './assets/golden.jpg',
-//   './assets/maskedmeeting.jpg',
-//   './assets/masquerade.jpg',
-//   './assets/moonlitmeadow.jpg',
-//   './assets/office.png',
-//   './assets/picnic.jpg',
-//   './assets/pirate.jpg',
-//   './assets/prairie.jpg',
-//   './assets/redrenaissance.jpg',
-//   './assets/regency.jpg',
-//   './assets/ribbons.jpg',
-//   './assets/roses.jpg',
-//   './assets/ruffles.jpg',
-//   './assets/scroll.jpg',
-//   './assets/shine.png',
-//   './assets/smolder.png',
-//   './assets/snow.jpg',
-//   './assets/sparkles.jpg',
-//   './assets/stripes.png',
-//   './assets/wildwest.jpg',
-//   './assets/windswept.jpg',
-// ];
-//
-// var titles = [
-//   "Passionate Moonlight",
-//   "Love's Misery",
-//   "Roses and Flame",
-//   "Innocent Roses",
-//   "Silk and Sense",
-//   "Hearts Aflame",
-//   "Fiery Passion",
-//   "Stolen Hearts",
-//   "Secrets and Silk",
-//   "Dreams of Fire",
-//   "Lovers and Enemies",
-//   "Passion's Embrace",
-//   "Harbinger by Moonlight",
-//   "Rouge Red",
-//   "Moonlit Mysteries",
-//   "Crimson Roses",
-//   "Destiny's Fires",
-//   "Proposals and Passion",
-//   "Silk Wedding",
-//   "Masked Seduction",
-//   "Crimson Masquerade",
-//   "Stolen Rubies",
-//   "Emerald Eyes",
-//   "Sapphire Skies",
-//   "Opal Passions"
-// ];
-//
-// var descriptors = [
-//   "passion",
-//   "glory",
-//   "romance",
-//   "woe",
-//   "sorrow",
-//   "pain",
-//   "ardor",
-//   "devotion",
-//   "excitement",
-//   "fervor",
-//   "rage",
-//   "spirit",
-//   "zeal",
-//   "ecstasy",
-//   "fire",
-//   "storms",
-//   "tempests",
-//   "rapture",
-//   "ire",
-//   "jealousy",
-//   "exhilaration",
-//   "bliss",
-//   "enchantment",
-//   "paradise",
-//   "calamity",
-//   "disaster",
-//   "heartache",
-//   "misfortune",
-//   "agony",
-//   "curses",
-//   "blessings",
-//   "melancholy"
-// ];
-//
-// class Cover {
-//   constructor(coverImgSrc, title, descriptor1, descriptor2) {
-//     this.id = Date.now();
-//     this.cover = coverImgSrc;
-//     this.title = title;
-//     this.tagline1 = descriptor1;
-//     this.tagline2 = descriptor2;
-//   }
-// }
-//
-
-
-
-// var mainCover = new Cover(covers[getRandomIndex(covers)], titles[getRandomIndex(titles)], descriptors[getRandomIndex(descriptors)], descriptors[getRandomIndex(descriptors)]);
-// console.log(mainCover);
-
-// console.log(covers.length)
-// console.log(titles.length)
-// console.log(descriptors.length)
-// console.log(getRandomIndex(covers));
-// console.log(getRandomIndex(titles));
-// console.log(getRandomIndex(descriptors));
