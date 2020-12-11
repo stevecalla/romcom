@@ -19,15 +19,15 @@ function randomCover() {
   coverTitle.innerText = titles[getRandomIndex(titles)];
 }
 
-var homeView = document.querySelector(".view home-view");
-var makeCoverView = document.querySelector(".view form-view hidden");
+var homeView = document.querySelector(".view.home-view");
+var makeCoverView = document.querySelector(".view.form-view.hidden");
 var makeCoverButton = document.querySelector(".make-new-button");
 
 makeCoverButton.addEventListener("click", viewSwitch);
 
 function viewSwitch() {
-  homeView.innerText = 'view home-view hidden';
   makeCoverView.innerText = 'view form-view';
+  homeView.innerText = 'view home-view hidden';
 }
 
 // We've provided a few variables below
