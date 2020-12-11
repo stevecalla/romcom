@@ -22,6 +22,9 @@ function randomCover() {
 var homeView = document.querySelector(".view.home-view");
 var makeCoverView = document.querySelector(".view.form-view.hidden");
 var makeCoverButton = document.querySelector(".make-new-button");
+var randomCoverButton = document.querySelector(".random-cover-button");
+var saveCoverButton = document.querySelector(".save-cover-button")
+var homeCoverButton = document.querySelector(".home-button.hidden")
 
 makeCoverButton.addEventListener("click", viewSwitch);
 
@@ -29,6 +32,9 @@ function viewSwitch() {
   // homeView.classList.remove('.view.home-view');
   homeView.classList.add('hidden');
   makeCoverView.classList.remove('hidden');//reminder
+  randomCoverButton.classList.add('hidden');
+  saveCoverButton.classList.add('hidden');
+  homeCoverButton.classList.remove('hidden');
 };
 
 

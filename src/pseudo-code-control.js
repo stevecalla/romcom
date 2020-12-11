@@ -135,7 +135,7 @@ Pseudo Code:
 1) ABC
 2) ABC
 
-Date/Time: Thursday, 12/10 from 2:30p-4:00p
+Date/Time: Thursday, 12/10 from 2:30p-4:00p & 6:30 -8:00p
 
 Iteration 2 - Switching Views: Goals
 
@@ -154,37 +154,31 @@ var homeView = document.querySelector(".view.home-view");
 var makeCoverView = document.querySelector(".view.form-view.hidden");
 var makeCoverButton = document.querySelector(".make-new-button");
 
+“Show New Random Cover” and “Save Cover”
+var randomCoverButton = document.querySelector(".random-cover-button");
+var saveCoverButton = document.querySelector("save-cover-button")
+
 makeCoverButton.addEventListener("click", viewSwitch);
+
 
 function viewSwitch() {
   // homeView.classList.remove('.view.home-view');
   homeView.classList.add('hidden');
   makeCoverView.classList.remove('hidden');//reminder
+  randomCoverButton.classList.add('xxxx')
+  saveCoverButton.classList.add('xxxxx')
+
 };
 
 When the Form view is visible, the “Show New Random Cover” and “Save Cover” buttons should be hidden
+1) hide new random cover and save covers
+2) var for random cover & save cover use document queryselector to grab buttons
+3) add these variables to the viewSwitch function with possible conditions based on page started
+- home page button is hidden...did not need a conditional b/c the button fires the function with all actions required
+
+
 When the Form view is visible, the “Home” button should be visible
-
-Pseudo Code:
-1) Look for form - found the html code for make your over cover form in line 29 to 40 of the html
-2) how do we hide the view home-view line 17 and display line 29 view form-view hidden
-3a) "hidden is a key word of some type so we simple innerText to replace on page load
-4)  var for the button make own cover
-4a) var for for button change home cover html
-5) document query querySelector
-6) event handler
-7) innert text in the event handler
-
-Saved Covers View:
-When a user clicks the “View Saved Covers” button, we should see the saved covers section, and the homepage view should be hidden
-When the Saved Covers view is visible, the “Show New Random Cover” and “Save Cover” buttons should be hidden
-When the Saved Covers view is visible, the “Home” button should be visible
-For both the Make New Cover form section and the Saved Covers section:
-
-In summary: Be able to switch between the three views (main poster, form, and saved posters) on the correct button clicks
-When a user clicks the “Home” button, we should only see the Home section
-When a user clicks the “Home” button, the home button should be hidden
-When a user clicks the “Home” button, the “Show New Random Cover” and “Save Cover” buttons should be visible again
-Hint: go check out the HTML and CSS files to see how the form and saved covers sections are being hidden in the first place
+1) var a variable for the home button using document query querySelector
+2) add this variable to the viewSwitch function removing the "hidden" key word
 
 */
