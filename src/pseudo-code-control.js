@@ -198,5 +198,20 @@ When the Saved Covers view is visible, the “Show New Random Cover” and “Sa
 When the Saved Covers view is visible, the “Home” button should be visible
 1) add homecoverbutton classlist with a visible call
 
+For both the Make New Cover form section and the Saved Covers section:
+
+In summary: Be able to switch between the three views (main poster, form, and saved posters) on the correct button clicks
+1) review the function for view saved covers & add something to invoke the page
+2) home button functionality
+3) make your cover - ensure it works
+
+When a user clicks the “Home” button, we should only see the Home section
+1) need variable to access the buttons...homeCoverButton
+2) need an event listener DONE
+3) need handle for actions
+
+When a user clicks the “Home” button, the home button should be hidden
+When a user clicks the “Home” button, the “Show New Random Cover” and “Save Cover” buttons should be visible again
+Hint: go check out the HTML and CSS files to see how the form and saved covers sections are being hidden in the first place
 
 */

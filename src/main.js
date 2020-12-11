@@ -39,6 +39,7 @@ function viewSwitchMakeCover() {
   randomCoverButton.classList.add('hidden');
   saveCoverButton.classList.add('hidden');
   homeCoverButton.classList.remove('hidden');
+  saveCoverView.classList.add('hidden')
 };
 
 savedViewCoverButton.addEventListener("click", viewSwitchSaveCover);
@@ -49,8 +50,17 @@ function viewSwitchSaveCover() {
   randomCoverButton.classList.add('hidden');
   saveCoverButton.classList.add('hidden');
   homeCoverButton.classList.remove('hidden');
+  makeCoverView.classList.add('hidden');
 };
 
+homeCoverButton.addEventListener("click", viewSwitchHomeCover);
+
+function viewSwitchHomeCover() {
+  homeView.classList.remove('hidden');
+  randomCoverButton.classList.remove('hidden');
+  saveCoverButton.classList.remove('hidden');
+  homeCoverButton.classList.add('hidden');
+}
 
 
 // We've provided a few variables below
