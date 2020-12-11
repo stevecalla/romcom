@@ -1,4 +1,4 @@
-//----   Iteration 0 -----//
+// HACK: //----   Iteration 0 -----//
 
 /* Goal: When the page loads, we should see a cover with a
 randomly selected image, title, and tagline which
@@ -180,5 +180,38 @@ When the Form view is visible, the “Show New Random Cover” and “Save Cover
 When the Form view is visible, the “Home” button should be visible
 1) var a variable for the home button using document query querySelector
 2) add this variable to the viewSwitch function removing the "hidden" key word
+
+When a user clicks the “View Saved Covers” button, we should see the saved covers section, and the homepage view should be hidden
+1) hide the come Pages
+1a) change title of current viewSwitch to viewSwitchMakeCover
+1b) use homepage variable in viewSwitch for saved covers to hide the homepage
+3) created event listener for the view saved covers buttons
+4) create a new function for the click actions on the saved covers buttons
+4a) use classList add/remove methods to add and remove hidden key
+
+When the Saved Covers view is visible, the “Show New Random Cover” and “Save Cover” buttons should be hidden
+1) click view saved button.....saved cover page = visible, show random cover = hidden, saved cover = hidden
+1a) create event listener- use current event listener for view saved covers
+1b) check or make variables for make your own cover & new random covers
+1c) within the for viewSwitchCover Button = add and remove hidden for the button variables
+
+When the Saved Covers view is visible, the “Home” button should be visible
+1) add homecoverbutton classlist with a visible call
+
+For both the Make New Cover form section and the Saved Covers section:
+
+In summary: Be able to switch between the three views (main poster, form, and saved posters) on the correct button clicks
+1) review the function for view saved covers & add something to invoke the page
+2) home button functionality
+3) make your cover - ensure it works
+
+When a user clicks the “Home” button, we should only see the Home section
+1) need variable to access the buttons...homeCoverButton
+2) need an event listener DONE
+3) need handle for actions
+
+When a user clicks the “Home” button, the home button should be hidden
+When a user clicks the “Home” button, the “Show New Random Cover” and “Save Cover” buttons should be visible again
+Hint: go check out the HTML and CSS files to see how the form and saved covers sections are being hidden in the first place
 
 */
