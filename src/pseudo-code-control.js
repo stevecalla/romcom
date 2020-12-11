@@ -154,15 +154,29 @@ var homeView = document.querySelector(".view.home-view");
 var makeCoverView = document.querySelector(".view.form-view.hidden");
 var makeCoverButton = document.querySelector(".make-new-button");
 
+“Show New Random Cover” and “Save Cover”
+var randomCoverButton = document.querySelector(".random-cover-button");
+var saveCoverButton = document.querySelector("save-cover-button")
+
 makeCoverButton.addEventListener("click", viewSwitch);
+
 
 function viewSwitch() {
   // homeView.classList.remove('.view.home-view');
   homeView.classList.add('hidden');
   makeCoverView.classList.remove('hidden');//reminder
+  randomCoverButton.classList.add('xxxx')
+  saveCoverButton.classList.add('xxxxx')
+
 };
 
 When the Form view is visible, the “Show New Random Cover” and “Save Cover” buttons should be hidden
+1) hide new random cover and save covers
+2) var for random cover & save cover use document queryselector to grab buttons
+3) add these variables to the viewSwitch function with possible conditions based on page started
+- home page button is hidden...did not need a conditional b/c the button fires the function with all actions required
+
+
 When the Form view is visible, the “Home” button should be visible
 
 Pseudo Code:
