@@ -145,8 +145,22 @@ witched when you click the appropriate buttons.
 
 Form View:
 When a user clicks the “Make Your Own Cover” button, we should see the form, and the homepage view should be hidden
-1) docoument querySelector
-2) listeners
+1) created var for each page homeview & makecoverview class with document querySelector
+2) created var for makecoverbutton using querySelector
+3) created event listener for makecoverbutton with a function call to viewSwitch
+4) created function viewSwitch to "add" and "remove" based on classList functions
+
+var homeView = document.querySelector(".view.home-view");
+var makeCoverView = document.querySelector(".view.form-view.hidden");
+var makeCoverButton = document.querySelector(".make-new-button");
+
+makeCoverButton.addEventListener("click", viewSwitch);
+
+function viewSwitch() {
+  // homeView.classList.remove('.view.home-view');
+  homeView.classList.add('hidden');
+  makeCoverView.classList.remove('hidden');//reminder
+};
 
 When the Form view is visible, the “Show New Random Cover” and “Save Cover” buttons should be hidden
 When the Form view is visible, the “Home” button should be visible

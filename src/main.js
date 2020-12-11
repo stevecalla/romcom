@@ -26,9 +26,11 @@ var makeCoverButton = document.querySelector(".make-new-button");
 makeCoverButton.addEventListener("click", viewSwitch);
 
 function viewSwitch() {
-  makeCoverView.innerText = 'view form-view';
-  homeView.innerText = 'view home-view hidden';
-}
+  // homeView.classList.remove('.view.home-view');
+  homeView.classList.add('hidden');
+  makeCoverView.classList.remove('hidden');//reminder
+};
+
 
 // We've provided a few variables below
 // var savedCovers = [
