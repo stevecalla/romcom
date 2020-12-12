@@ -261,9 +261,11 @@ If a user clicks the “Save Cover” more than once on a single cover, it will 
 1) if currentCover includes new Cover instance then don't add (return), otherwise push
 
 When a user clicks the “View Saved Covers” button, we should see the saved covers section
-1) currently working on an if... includes statement
+1) did this earlier...
 
 All the covers in the savedCovers array should be displayed in the saved covers section
+1) xxxxx
+
 Note: None of this needs to persist on page load
 
 
