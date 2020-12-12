@@ -28,6 +28,8 @@ var randomCoverButton = document.querySelector(".random-cover-button");
 var saveCoverButton = document.querySelector(".save-cover-button")
 var savedViewCoverButton = document.querySelector(".view-saved-button")
 var homeCoverButton = document.querySelector(".home-button.hidden")
+var createNewSavedBook = document.querySelector(".create-new-book-button");
+
 
 
 makeCoverButton.addEventListener("click", viewSwitchMakeCover);
@@ -63,11 +65,32 @@ function viewSwitchHomeCover() {
 }
 
 
+
 // We've provided a few variables below
-// var savedCovers = [
-//   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
-// ];
-// var currentCover;
+
+
+var savedCovers = [
+  new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
+];
+var currentCover;
+
+var coverInput = document.getElementById("cover");
+var titleInput = document.getElementById("title");
+var descriptor1Input = document.getElementById("descriptor1");
+var descriptor2Input = document.getElementById("descriptor2");
+
+createNewSavedBook.addEventListener("click", createNewBook);
+
+function createNewBook() {
+  event.preventDefault()
+  var coverInputImage = coverInput.value;
+  var titleInputText = titleInput.value;
+  var descriptor1Text = descriptor1Input.value;
+  var descriptor2Text = descriptor2Input.value;
+  var currentCover = new Cover(coverInputImage, titleInputText, descriptor1Text, descriptor2Text);
+  savedCovers.push(currentCover);
+};
+
 
 // Add your event listeners here 👇
 

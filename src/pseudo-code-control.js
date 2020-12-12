@@ -211,7 +211,28 @@ When a user clicks the “Home” button, we should only see the Home section
 3) need handle for actions
 
 When a user clicks the “Home” button, the home button should be hidden
+1) complete based on logic for the other buttons
+
 When a user clicks the “Home” button, the “Show New Random Cover” and “Save Cover” buttons should be visible again
+1) complete based on logic for the other buttons
+
 Hint: go check out the HTML and CSS files to see how the form and saved covers sections are being hidden in the first place
+
+
+Iteration 3 - Creating a New Cover
+In the new cover form view, users should be able to fill out the four input fields and then hit the save button
+1) var, event listener and a function  for the buttons
+2) need text input field for value input using "value"
+
+3) push the input into respeective arrays
+4) create a new instance of the covers class
+5) display the newly created cover image...
+
+
+When the save button is clicked, several things will happen:
+Save the submitted data into the respective arrays (cover URL into the covers array, title string into the titles array, etc) so that future random covers can use the user-created data
+Use the values from the inputs to create a new instance of the Cover class
+Change back to the main home view (hiding the form view again)
+Display the newly created cover image, title, and descriptors in the main cover
 
 */
