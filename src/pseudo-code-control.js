@@ -228,11 +228,25 @@ In the new cover form view, users should be able to fill out the four input fiel
 4) create a new instance of the covers class
 5) display the newly created cover image...
 
-
 When the save button is clicked, several things will happen:
-Save the submitted data into the respective arrays (cover URL into the covers array, title string into the titles array, etc) so that future random covers can use the user-created data
-Use the values from the inputs to create a new instance of the Cover class
-Change back to the main home view (hiding the form view again)
-Display the newly created cover image, title, and descriptors in the main cover
+Save the submitted data into the respective arrays (cover URL into the covers array,
+  title string into the titles array, etc) so that future random covers can use the user-created
+  data
+1) add a push inthe createNewBook function for each variable in the array
 
+Use the values from the inputs to create a new instance of the Cover class
+1) added a instance creator to the last line of the createNewBook function
+
+Change back to the main home view (hiding the form view again)
+1) view the main home page... added classList.remove for homeView
+2) hide the makeCoverView page... added classList.add hidden
+3) decided to call on the viewSwitchHomeCover function
+
+Display the newly created cover image, title, and descriptors in the main cover
+1) home page should display the newly created cover
+
+The Lone Lover
+assassination
+betrayal
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhBB9hLlCXFD8uDm5SXz_vP6Jnjd8qqkgXrA&usqp=CAU
 */
