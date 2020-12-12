@@ -14,9 +14,9 @@ randomButtonCover.addEventListener('click', randomCover);
 
 function randomCover() {
   coverImage1.src = `${covers[getRandomIndex(covers)]}`;
+  coverTitle.innerText = titles[getRandomIndex(titles)];
   tagline1.innerText = descriptors[getRandomIndex(descriptors)];
   tagline2.innerText = descriptors[getRandomIndex(descriptors)];
-  coverTitle.innerText = titles[getRandomIndex(titles)];
 }
 
 var homeView = document.querySelector(".view.home-view");
@@ -62,12 +62,10 @@ function viewSwitchHomeCover() {
   randomCoverButton.classList.remove('hidden');
   saveCoverButton.classList.remove('hidden');
   homeCoverButton.classList.add('hidden');
+  makeCoverView.classList.add('hidden');
 }
 
-
-
 // We've provided a few variables below
-
 
 var savedCovers = [
   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
@@ -87,9 +85,19 @@ function createNewBook() {
   var titleInputText = titleInput.value;
   var descriptor1Text = descriptor1Input.value;
   var descriptor2Text = descriptor2Input.value;
+  covers.push(coverInputImage);
+  titles.push(titleInputText);
+  descriptors.push(descriptor1Text, descriptor2Input);
   var currentCover = new Cover(coverInputImage, titleInputText, descriptor1Text, descriptor2Text);
+  viewSwitchHomeCover()
+  coverImage1.src = `${coverInputImage}`;
+  coverTitle.innerText = titleInputText;
+  tagline1.innerText = descriptor1Text;
+  tagline2.innerText = descriptor2Text;
   savedCovers.push(currentCover);
+  console.log(savedCovers);
 };
+
 
 
 // Add your event listeners here 👇
