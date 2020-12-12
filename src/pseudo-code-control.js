@@ -249,4 +249,29 @@ The Lone Lover
 assassination
 betrayal
 https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhBB9hLlCXFD8uDm5SXz_vP6Jnjd8qqkgXrA&usqp=CAU
+
+
+Iteration 4 - Saving & Viewing Covers
+When a user clicks the “Save Cover” button, the current cover will be added to the savedCovers array
+1) add currentCover to the savedCover arrays = created a function with call to the new Cover class
+3) var button saveCoverButton = button already exists
+4) event listen = created saveCoverButton
+
+If a user clicks the “Save Cover” more than once on a single cover, it will still only be saved once (no duplicates)
+1) if currentCover includes new Cover instance then don't add (return), otherwise push
+
+When a user clicks the “View Saved Covers” button, we should see the saved covers section
+1) currently working on an if... includes statement
+
+All the covers in the savedCovers array should be displayed in the saved covers section
+Note: None of this needs to persist on page load
+
+
+
+
+
+
+
+
+
 */

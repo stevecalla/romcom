@@ -94,10 +94,25 @@ function createNewBook() {
   coverTitle.innerText = titleInputText;
   tagline1.innerText = descriptor1Text;
   tagline2.innerText = descriptor2Text;
-  savedCovers.push(currentCover);
-  console.log(savedCovers);
 };
 
+saveCoverButton.addEventListener("click", saveDisplayCurrentCover);
+
+function saveDisplayCurrentCover(currentCover) {
+  currentCover = new Cover(coverImage1, coverTitle, tagline1, tagline2);
+  console.log('saved', savedCovers);
+  console.log('current', currentCover);
+  savedCovers.push(currentCover);
+  console.log(savedCovers.indexOf(currentCover));
+  console.log(coverImage1,coverTitle, tagline1, tagline2);
+  if (savedCovers.includes(currentCover)) {
+    return "hello";
+  } else {
+    savedCovers.push(currentCover);
+  };
+  // console.log(savedCovers.indexOf(currentCover));
+  console.log(savedCovers);
+};
 
 
 // Add your event listeners here 👇
