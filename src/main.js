@@ -8,6 +8,7 @@ var randomButtonCover = document.querySelector('.random-cover-button'); //row 12
 
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
+
 }
 
 randomButtonCover.addEventListener('click', randomCover);
@@ -36,7 +37,6 @@ var createNewSavedBook = document.querySelector(".create-new-book-button");
 makeCoverButton.addEventListener("click", viewSwitchMakeCover);
 
 function viewSwitchMakeCover() {
-  // homeView.classList.remove('.view.home-view');
   homeView.classList.add('hidden');
   makeCoverView.classList.remove('hidden');//reminder
   randomCoverButton.classList.add('hidden');
@@ -46,7 +46,6 @@ function viewSwitchMakeCover() {
 };
 
 savedViewCoverButton.addEventListener("click", viewSwitchSaveCover);
-console.log(saveCoverView);
 
 function viewSwitchSaveCover() {
   homeView.classList.add('hidden');
@@ -66,7 +65,7 @@ function displaySavedCovers() {
         <img class="cover-image" src=${savedCovers[i].cover}>
         <h2 class="cover-title">${savedCovers[i].title}</h2>
         <h3 class="tagline">A tale of <span class="tagline-1">${savedCovers[i].tagline1}</span> and <span class="tagline-2">${savedCovers[i].tagline2}</span></h3>
-      </section>
+       </section>
       `;
     }
   };
@@ -86,7 +85,7 @@ function viewSwitchHomeCover() {
 var savedCovers = [
   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
 ];
-var currentCover;
+var currentCover = randomCover();
 
 var coverInput = document.getElementById("cover");
 var titleInput = document.getElementById("title");
@@ -110,34 +109,53 @@ function createNewBook() {
   titles.push(titleInputText);
   descriptors.push(descriptor1Text, descriptor2Input);
   viewSwitchHomeCover();
-
-//these are probably out order
-//create a new instance (input values, create new instance,
-//store new instance, switch to homepage, display, then if user likes
-//it they'll save it, then push into poster)
 };
 
-saveCoverButton.addEventListener("click", saveDisplayCurrentCover);
+// function createNewBook() {
+//   event.preventDefault()
+//   coverInputImage = coverInput.value;
+//   titleInputText = titleInput.value;
+//   descriptor1Text = descriptor1Input.value;
+//   descriptor2Text = descriptor2Input.value;
+//   currentCover = new Cover(coverInputImage, titleInputText, descriptor1Text, descriptor2Text);
+//   assignUserInput();
+//   populateNewBook(); //push new book into variable arrays
+//   viewSwitchHomeCover();
+// };
+//
+// function assignUserInput() {
+//   coverImage1.src = coverInputImage;
+//   coverTitle.innerText = titleInputText;
+//   tagline1.innerText = descriptor1Text;
+//   tagline2.innerText = descriptor2Text;
+// }
+//
+// function populateNewBook() {
+//   covers.push(coverInputImage);
+//   titles.push(titleInputText);
+//   descriptors.push(descriptor1Text, descriptor2Input);
+// }
 
-function saveDisplayCurrentCover() {
+saveCoverButton.addEventListener("click", saveCurrentCover);
+
+function saveCurrentCover() {
+  currentCover = new Cover(coverImage1.src, coverTitle.innerText, tagline1.innerText, tagline2.innerText);
   if (!savedCovers.includes(currentCover)) {  //! is the same as "=== false"
       savedCovers.push(currentCover);
   };
 };
 
-// savedCoversSection.addEventListener(“dblclick”, deletor);
+savedCoversSection.addEventListener('dblclick', deletor);
 
-// function deletor() {
-//   if (event.target.closest(“.mini-cover”)) {
-//     var clickedMiniCover = event.target.closest(“.mini-cover”);
-//     for (var i = 0; i < savedCovers.length; i++) {
-//       if(savedCovers[i].id === Number(clickedMiniCover.id)){
-//         savedCovers.splice(i, 1);
-//       };
-//     };
-//   };
-//   displaySavedCovers();
-// };
+function deletor() {
+    var clickedMiniCover = event.target.closest(".mini-cover");
+    for (var i = 0; i < savedCovers.length; i++) {
+      if(savedCovers[i].id === Number(clickedMiniCover.id)){
+        savedCovers.splice(i, 1);
+      };
+    };
+  displaySavedCovers();
+};
 // Add your event listeners here 👇
 
 
