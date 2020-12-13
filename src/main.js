@@ -24,6 +24,7 @@ var homeView = document.querySelector(".view.home-view");
 var makeCoverView = document.querySelector(".view.form-view.hidden");
 var saveCoverView = document.querySelector(".view.saved-view.hidden");
 var savedCoversSection = document.querySelector(".saved-covers-section");
+var coverLocation = document.querySelector('.mini-cover')
 
 var makeCoverButton = document.querySelector(".make-new-button");
 var randomCoverButton = document.querySelector(".random-cover-button");
@@ -54,15 +55,16 @@ function viewSwitchSaveCover() {
   homeCoverButton.classList.remove('hidden');
   makeCoverView.classList.add('hidden');
   currentCover = new Cover(coverImage1.src, coverTitle.innerText, tagline1.innerText, tagline2.innerText);
-  savedCoversSection.classList.add("mini-cover");
-  for(var i = 0; i < savedCovers.length; i++)
-  savedCoversSection.innerHTML =
-    `<img class="cover-image" src=${savedCovers[i].cover}>
-     <h2 class="cover-title mini-cover">${savedCovers[i].title}</h2>
-     <h3 class="tagline">A tale of <span class="tagline-1">${savedCovers[i].tagline1}</span> and <span class="tagline-2">${savedCovers[i].tagline2}</span></h3>
-     <img class="price-tag" src="./assets/price.png">
-     <img class="overlay" src="./assets/overlay.png">`;
-    console.log(coverTitle.innerText)
+  //savedCoversSection.classList.add("mini-cover");
+  for(var i = 0; i < savedCovers.length; i++) {
+  savedCoversSection.innerHTML +=
+    `<section class="mini-cover" id= "${savedCovers[i].id}" >
+       <img class="cover-image" src=${savedCovers[i].cover}>
+       <h2 class="cover-title">${savedCovers[i].title}</h2>
+       <h3 class="tagline">A tale of <span class="tagline-1">${savedCovers[i].tagline1}</span> and <span class="tagline-2">${savedCovers[i].tagline2}</span></h3>
+    </section>
+     `;
+  }
 };
 
 homeCoverButton.addEventListener("click", viewSwitchHomeCover);
@@ -114,11 +116,10 @@ function createNewBook() {
 saveCoverButton.addEventListener("click", saveDisplayCurrentCover);
 
 function saveDisplayCurrentCover() {
-  currentCover = new Cover(coverImage1.src, coverTitle.innerText, tagline1.innerText, tagline2.innerText);
+  // currentCover = new Cover(coverImage1.src, coverTitle.innerText, tagline1.innerText, tagline2.innerText);
   if (!savedCovers.includes(currentCover)) {  //! is the same as "=== false"
       savedCovers.push(currentCover);
   }
-  console.log('after push = ', savedCovers);
 };
 
 // Add your event listeners here 👇
