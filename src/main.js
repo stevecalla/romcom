@@ -55,8 +55,7 @@ function viewSwitchSaveCover() {
   saveCoverButton.classList.add('hidden');
   homeCoverButton.classList.remove('hidden');
   makeCoverView.classList.add('hidden');
-  savedCoversSection.innerHTML = ""; //added empty string
-  removed currentcovers
+ //added empty string
   // test w/ and w/out 58
   // move 58 to 68 b/f for statement
   // savedCovers = ["http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows"];
@@ -65,6 +64,7 @@ function viewSwitchSaveCover() {
     };
 
 function displaySavedCovers() {
+    savedCoversSection.innerHTML = "";
     for (var i = 0; i < savedCovers.length; i++) {
       savedCoversSection.innerHTML +=
       `<section class="mini-cover" id=${savedCovers[i].id}>
