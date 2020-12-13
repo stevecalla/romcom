@@ -46,6 +46,7 @@ function viewSwitchMakeCover() {
 };
 
 savedViewCoverButton.addEventListener("click", viewSwitchSaveCover);
+console.log(saveCoverView);
 
 function viewSwitchSaveCover() {
   homeView.classList.add('hidden');
@@ -54,18 +55,21 @@ function viewSwitchSaveCover() {
   saveCoverButton.classList.add('hidden');
   homeCoverButton.classList.remove('hidden');
   makeCoverView.classList.add('hidden');
-  currentCover = new Cover(coverImage1.src, coverTitle.innerText, tagline1.innerText, tagline2.innerText);
-  //savedCoversSection.classList.add("mini-cover");
-  for(var i = 0; i < savedCovers.length; i++) {
-  savedCoversSection.innerHTML +=
-    `<section class="mini-cover" id= "${savedCovers[i].id}" >
-       <img class="cover-image" src=${savedCovers[i].cover}>
-       <h2 class="cover-title">${savedCovers[i].title}</h2>
-       <h3 class="tagline">A tale of <span class="tagline-1">${savedCovers[i].tagline1}</span> and <span class="tagline-2">${savedCovers[i].tagline2}</span></h3>
-    </section>
-     `;
-  }
-};
+  displaySavedCovers();
+    };
+
+function displaySavedCovers() {
+    savedCoversSection.innerHTML = "";
+    for (var i = 0; i < savedCovers.length; i++) {
+      savedCoversSection.innerHTML +=
+      `<section class="mini-cover" id=${savedCovers[i].id}>
+        <img class="cover-image" src=${savedCovers[i].cover}>
+        <h2 class="cover-title">${savedCovers[i].title}</h2>
+        <h3 class="tagline">A tale of <span class="tagline-1">${savedCovers[i].tagline1}</span> and <span class="tagline-2">${savedCovers[i].tagline2}</span></h3>
+      </section>
+      `;
+    }
+  };
 
 homeCoverButton.addEventListener("click", viewSwitchHomeCover);
 
@@ -105,7 +109,7 @@ function createNewBook() {
   covers.push(coverInputImage);
   titles.push(titleInputText);
   descriptors.push(descriptor1Text, descriptor2Input);
-  viewSwitchHomeCover()
+  viewSwitchHomeCover();
 
 //these are probably out order
 //create a new instance (input values, create new instance,
@@ -116,12 +120,24 @@ function createNewBook() {
 saveCoverButton.addEventListener("click", saveDisplayCurrentCover);
 
 function saveDisplayCurrentCover() {
-  // currentCover = new Cover(coverImage1.src, coverTitle.innerText, tagline1.innerText, tagline2.innerText);
   if (!savedCovers.includes(currentCover)) {  //! is the same as "=== false"
       savedCovers.push(currentCover);
-  }
+  };
 };
 
+// savedCoversSection.addEventListener(“dblclick”, deletor);
+
+// function deletor() {
+//   if (event.target.closest(“.mini-cover”)) {
+//     var clickedMiniCover = event.target.closest(“.mini-cover”);
+//     for (var i = 0; i < savedCovers.length; i++) {
+//       if(savedCovers[i].id === Number(clickedMiniCover.id)){
+//         savedCovers.splice(i, 1);
+//       };
+//     };
+//   };
+//   displaySavedCovers();
+// };
 // Add your event listeners here 👇
 
 
