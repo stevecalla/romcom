@@ -17,13 +17,14 @@ function randomCover() {
   coverTitle.innerText = titles[getRandomIndex(titles)];
   tagline1.innerText = descriptors[getRandomIndex(descriptors)];
   tagline2.innerText = descriptors[getRandomIndex(descriptors)];
-  currentCover = new Cover(coverImage1, coverTitle, tagline1, tagline2);
+  currentCover = new Cover(coverImage1.src, coverTitle.innerText, tagline1.innerText, tagline2.innerText);
 }
 
 var homeView = document.querySelector(".view.home-view");
 var makeCoverView = document.querySelector(".view.form-view.hidden");
 var saveCoverView = document.querySelector(".view.saved-view.hidden");
 var savedCoversSection = document.querySelector(".saved-covers-section");
+var coverLocation = document.querySelector('.mini-cover')
 
 var makeCoverButton = document.querySelector(".make-new-button");
 var randomCoverButton = document.querySelector(".random-cover-button");
@@ -53,13 +54,17 @@ function viewSwitchSaveCover() {
   saveCoverButton.classList.add('hidden');
   homeCoverButton.classList.remove('hidden');
   makeCoverView.classList.add('hidden');
-  // display saved covers array
-  // savedCoversSection.innerHTML =
-  //   `<img class="cover-image" src="./assets/prairie.jpg">
-  //   <h2 class="cover-title">Windswept Hearts</h2>
-  //   <h3 class="tagline">A tale of <span class="tagline-1">passion</span> and <span class="tagline-2">woe</span></h3>
-  //   <img class="price-tag" src="./assets/price.png">
-  //   <img class="overlay" src="./assets/overlay.png">`;
+  currentCover = new Cover(coverImage1.src, coverTitle.innerText, tagline1.innerText, tagline2.innerText);
+  //savedCoversSection.classList.add("mini-cover");
+  for(var i = 0; i < savedCovers.length; i++) {
+  savedCoversSection.innerHTML +=
+    `<section class="mini-cover" id= "${savedCovers[i].id}" >
+       <img class="cover-image" src=${savedCovers[i].cover}>
+       <h2 class="cover-title">${savedCovers[i].title}</h2>
+       <h3 class="tagline">A tale of <span class="tagline-1">${savedCovers[i].tagline1}</span> and <span class="tagline-2">${savedCovers[i].tagline2}</span></h3>
+    </section>
+     `;
+  }
 };
 
 homeCoverButton.addEventListener("click", viewSwitchHomeCover);
@@ -80,7 +85,6 @@ var savedCovers = [
 var currentCover;
 
 var coverInput = document.getElementById("cover");
-console.log('what is this =', coverInput);
 var titleInput = document.getElementById("title");
 var descriptor1Input = document.getElementById("descriptor1");
 var descriptor2Input = document.getElementById("descriptor2");
@@ -95,12 +99,12 @@ function createNewBook() {
   descriptor2Text = descriptor2Input.value;
   currentCover = new Cover(coverInputImage, titleInputText, descriptor1Text, descriptor2Text);
   coverImage1.src = coverInputImage;
-  covers.push(coverInputImage);
-  titles.push(titleInputText);
-  descriptors.push(descriptor1Text, descriptor2Input);
   coverTitle.innerText = titleInputText;
   tagline1.innerText = descriptor1Text;
   tagline2.innerText = descriptor2Text;
+  covers.push(coverInputImage);
+  titles.push(titleInputText);
+  descriptors.push(descriptor1Text, descriptor2Input);
   viewSwitchHomeCover()
 
 //these are probably out order
@@ -112,12 +116,10 @@ function createNewBook() {
 saveCoverButton.addEventListener("click", saveDisplayCurrentCover);
 
 function saveDisplayCurrentCover() {
-  console.log('current cover', currentCover);
-  console.log('saved cover =', savedCovers);
+  // currentCover = new Cover(coverImage1.src, coverTitle.innerText, tagline1.innerText, tagline2.innerText);
   if (!savedCovers.includes(currentCover)) {  //! is the same as "=== false"
       savedCovers.push(currentCover);
   }
-  console.log('after push = ', savedCovers);
 };
 
 // Add your event listeners here 👇
