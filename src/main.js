@@ -55,11 +55,6 @@ function viewSwitchSaveCover() {
   saveCoverButton.classList.add('hidden');
   homeCoverButton.classList.remove('hidden');
   makeCoverView.classList.add('hidden');
- //added empty string
-  // test w/ and w/out 58
-  // move 58 to 68 b/f for statement
-  // savedCovers = ["http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows"];
-  // currentCover = new Cover(coverImage1.src, coverTitle.innerText, tagline1.innerText, tagline2.innerText);
   displaySavedCovers();
     };
 
@@ -68,34 +63,13 @@ function displaySavedCovers() {
     for (var i = 0; i < savedCovers.length; i++) {
       savedCoversSection.innerHTML +=
       `<section class="mini-cover" id=${savedCovers[i].id}>
-      <img class="cover-image" src=${savedCovers[i].cover}>
-      <h2 class="cover-title">${savedCovers[i].title}</h2>
-      <h3 class="tagline">A tale of <span class="tagline-1">${savedCovers[i].tagline1}</span> and <span class="tagline-2">${savedCovers[i].tagline2}</span></h3>
+        <img class="cover-image" src=${savedCovers[i].cover}>
+        <h2 class="cover-title">${savedCovers[i].title}</h2>
+        <h3 class="tagline">A tale of <span class="tagline-1">${savedCovers[i].tagline1}</span> and <span class="tagline-2">${savedCovers[i].tagline2}</span></h3>
       </section>
       `;
     }
   };
-  // if (onSaveCoverView === true) {
-  //   for(var i = 0; i < savedCovers.length; i++) {
-  //       savedCoversSection.innerHTML +=
-  //       `<section class="mini-cover" id= "${savedCovers[i].id}" >
-  //       <img class="cover-image" src=${savedCovers[i].cover}>
-  //       <h2 class="cover-title">${savedCovers[i].title}</h2>
-  //       <h3 class="tagline">A tale of <span class="tagline-1">${savedCovers[i].tagline1}</span> and <span class="tagline-2">${savedCovers[i].tagline2}</span></h3>
-  //       </section>
-  //       `;
-  //       // saveCoverView.classList.remove('hidden');
-  //       }
-  //     } else {
-  //       savedCoversSection.innerHTML =
-  //       `<section class="mini-cover" id= "${savedCovers[i].id}" >
-  //       <img class="cover-image" src=${savedCovers[i].cover}>
-  //       <h2 class="cover-title">${savedCovers[i].title}</h2>
-  //       <h3 class="tagline">A tale of <span class="tagline-1">${savedCovers[i].tagline1}</span> and <span class="tagline-2">${savedCovers[i].tagline2}</span></h3>
-  //       </section>
-  //       `;
-  //     }
-// }
 
 homeCoverButton.addEventListener("click", viewSwitchHomeCover);
 
@@ -151,6 +125,19 @@ function saveDisplayCurrentCover() {
   };
 };
 
+// savedCoversSection.addEventListener(“dblclick”, deletor);
+
+// function deletor() {
+//   if (event.target.closest(“.mini-cover”)) {
+//     var clickedMiniCover = event.target.closest(“.mini-cover”);
+//     for (var i = 0; i < savedCovers.length; i++) {
+//       if(savedCovers[i].id === Number(clickedMiniCover.id)){
+//         savedCovers.splice(i, 1);
+//       };
+//     };
+//   };
+//   displaySavedCovers();
+// };
 // Add your event listeners here 👇
 
 
