@@ -1,6 +1,8 @@
 ## Overview - Romantic Comedy (RomCom) Covers
 
-RomCom is a website that allows a user to generate romance novel covers. The user can randomly generate a cover or can make a cover. The site is accessible at [here](https://stevecalla.github.io/romcom/). All the project requirements can be found [here](https://frontend.turing.io/projects/module-1/romcom-pair.html).
+People say that romance novels are formulaic. Well … maybe that’s true. RomCom is a website that allows a user to generate romance novel covers.
+
+The user can randomly generate a cover, can make a cover and save a collection of covers. The site is accessible at [here](https://stevecalla.github.io/romcom/). All the project requirements can be found [here](https://frontend.turing.io/projects/module-1/romcom-pair.html).
 
 ## Sample Cover
 
