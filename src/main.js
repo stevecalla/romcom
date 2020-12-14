@@ -4,49 +4,36 @@ var coverImage = document.querySelector("img");
 var coverTitle = document.querySelector(".cover-title");
 var tagline1 = document.querySelector(".tagline-1");
 var tagline2 = document.querySelector(".tagline-2");
-
 var homeView = document.querySelector(".view.home-view");
 var makeCoverView = document.querySelector(".view.form-view.hidden");
 var saveCoverView = document.querySelector(".view.saved-view.hidden");
 var savedCoversSection = document.querySelector(".saved-covers-section");
-
 var makeCoverButton = document.querySelector(".make-new-button");
 var randomCoverButton = document.querySelector(".random-cover-button");
 var saveCoverButton = document.querySelector(".save-cover-button");
 var savedViewCoverButton = document.querySelector(".view-saved-button");
 var homeCoverButton = document.querySelector(".home-button.hidden");
 var createNewCoverButton = document.querySelector(".create-new-book-button");
-
 var savedCovers = [
   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
 ];
 var currentCover = generateRandomCover();
-
 var coverInput = document.getElementById("cover");
 var titleInput = document.getElementById("title");
 var descriptor1Input = document.getElementById("descriptor1");
 var descriptor2Input = document.getElementById("descriptor2");
-
 // Add your event listeners here :point_👇
 randomCoverButton.addEventListener('click', generateRandomCover);
-
 makeCoverButton.addEventListener("click", viewMakeACover);
-
 savedViewCoverButton.addEventListener("click", viewSavedCovers);
-
 homeCoverButton.addEventListener("click", viewHomeCover);
-
 createNewCoverButton.addEventListener("click", createNewBook);
-
 saveCoverButton.addEventListener("click", saveCurrentCover);
-
 savedCoversSection.addEventListener('dblclick', deletor);
-
 // Create your event handlers and other functions here :point_down:👇
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 };
-
 function generateRandomCover() {
   coverImage.src = `${covers[getRandomIndex(covers)]}`;
   coverTitle.innerText = titles[getRandomIndex(titles)];
@@ -54,7 +41,6 @@ function generateRandomCover() {
   tagline2.innerText = descriptors[getRandomIndex(descriptors)];
   currentCover = new Cover(coverImage.src, coverTitle.innerText, tagline1.innerText, tagline2.innerText);
 };
-
 function viewMakeACover() {
   homeView.classList.add('hidden');
   makeCoverView.classList.remove('hidden');
@@ -63,7 +49,6 @@ function viewMakeACover() {
   homeCoverButton.classList.remove('hidden');
   saveCoverView.classList.add('hidden');
 };
-
 function viewSavedCovers() {
   homeView.classList.add('hidden');
   saveCoverView.classList.remove('hidden');
@@ -73,7 +58,6 @@ function viewSavedCovers() {
   makeCoverView.classList.add('hidden');
   displaySavedCovers();
 };
-
 function displaySavedCovers() {
   savedCoversSection.innerHTML = "";
   for (var i = 0; i < savedCovers.length; i++) {
@@ -86,7 +70,6 @@ function displaySavedCovers() {
     `;
   };
 };
-
 function viewHomeCover() {
   homeView.classList.remove('hidden');
   randomCoverButton.classList.remove('hidden');
@@ -94,7 +77,6 @@ function viewHomeCover() {
   homeCoverButton.classList.add('hidden');
   makeCoverView.classList.add('hidden');
 };
-
 function createNewBook() {
   event.preventDefault();
   coverInputImage = coverInput.value;
@@ -106,27 +88,23 @@ function createNewBook() {
   pushNewBook();
   viewHomeCover();
 };
-
 function assignUserInput() {
   coverImage.src = coverInputImage;
   coverTitle.innerText = titleInputText;
   tagline1.innerText = descriptor1Text;
   tagline2.innerText = descriptor2Text;
 };
-
 function pushNewBook() {
   covers.push(coverInputImage);
   titles.push(titleInputText);
   descriptors.push(descriptor1Text, descriptor2Input);
 };
-
 function saveCurrentCover() {
   currentCover = new Cover(coverImage.src, coverTitle.innerText, tagline1.innerText, tagline2.innerText);
   if (!savedCovers.includes(currentCover)) {
       savedCovers.push(currentCover);
   };
 };
-
 function deletor() {
     var clickedMiniCover = event.target.closest(".mini-cover");
     for (var i = 0; i < savedCovers.length; i++) {
